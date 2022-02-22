@@ -1,16 +1,25 @@
 const home = document.getElementById('home')
 const button = document.getElementById('quiz-button');
 const startSection = document.getElementById('start-quiz');
-const quizSection = document.getElementById('question-section');
+
+const quizSection = document.getElementById('question-div');
 const timerItem = document.getElementById('timer-item');
 const timer = document.getElementById('timer');
+
 const questionText = document.getElementById('question');
 const answersText = document.getElementById('answer-buttons');
 const answerButtons = document.getElementsByClassName("question-answer");
+
+const scoreText = document.getElementById('score-display');
+const scoreDisplay = document.getElementById('score-display-section');
+const scoreButton = document.getElementById('score-button');
+const initialsInput = document.getElementById('initial-form');
+
 var myWins = [];
 var timeLeft = 100;
 var stopTimer = false;
 var increment = 0
+let input;
 
 //array of questions
 const questions = [
@@ -76,19 +85,36 @@ const questions = [
     }
 ]
 
+const handleInputChange = () => {
+    input = initialsInput.value
+    console.log(input)
+}
+
+const submitScore = () => {
+    myWins.push({
+        "initials": input,
+        "score": timeLeft
+    })
+    console.log(myWins)
+    
+}
+
+const setScore = () => {
+    quizSection.classList.add('hidden')
+    timerItem.classList.add('hidden')
+    scoreDisplay.classList.remove('hidden')
+    scoreText.innerHTML = "Your final score was " + timeLeft + " seconds."
+}
+
 const handleAnswer = (event) => {
 
     const isButton = event.target.nodeName === 'BUTTON'
     if(!isButton) return
     
-
     const answer = event.target.value
 
-    if(questions.length - increment > 1) {
+    if(questions.length - increment > 1 && timeLeft > 0) {
         // checkAnswer()
-        console.log(answer)
-        console.log(questions[increment].correctAnswer)
-        console.log(answer !== questions[increment].correctAnswer)
         if(answer !== questions[increment].correctAnswer) {
             timeLeft = timeLeft - 20;
             console.log(timeLeft)
@@ -99,6 +125,7 @@ const handleAnswer = (event) => {
     } else {
         // create function to redirect to score page
         stopTimer = true;
+        setScore();
         console.log(timeLeft)
     }
 }
@@ -137,5 +164,6 @@ const startQuiz = () => {
 }
 
 answersText.addEventListener("click", handleAnswer);
-
 button.addEventListener('click', startQuiz);
+initialsInput.addEventListener('change', handleInputChange);
+scoreButton.addEventListener('click', submitScore);
