@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div>
+            <ul id="nav-list">
+                <li>
+                    <a href="home.html" id="home">home</a>
+                </li>
+                <li>
+                    <a href="leaderboard.html">leaderboard</a>
+                </li>
+                <li id="timer-item" class="hidden">
+                   <a id="timer" value="0"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="start-quiz"> 
+        <div id="start-quiz-section">
+            <div id="start-quiz-container">
+                <div id="quiz-text">
+                    <h2>Start Quiz ✧</h2>
+                    <p>Lets see how much you know about astronomy!</p>
+                    <p>Press the start button to begin the quiz.</p>
+                    <p>Try and answer as quickly as possible!</p>
+                    <p>Wrong answers will subtract time from your score.</p>
+                </div>
+        
+                <div id="quiz-button-section">
+                    <button id="quiz-button">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="question-section" class="hidden">
+        <div id="question-container">
+            <h3>QUESTION</h3>
+            <div>
+                <button class="question-answer">answer 1</button>
+                <button class="question-answer">answer 2</button>
+                <button class="question-answer">answer 3</button>
+                <button class="question-answer">answer 4</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/home.js"></script>
+
+</html>
