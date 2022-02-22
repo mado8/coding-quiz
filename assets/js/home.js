@@ -15,11 +15,18 @@ const scoreDisplay = document.getElementById('score-display-section');
 const scoreButton = document.getElementById('score-button');
 const initialsInput = document.getElementById('initial-form');
 
-var myWins = [];
+var myWins = JSON.parse(localStorage.getItem("wins"));
+
 var timeLeft = 100;
 var stopTimer = false;
 var increment = 0
 let input;
+
+if(myWins === null) {
+    myWins = [];
+}
+
+console.log(myWins)
 
 //array of questions
 const questions = [
@@ -96,7 +103,7 @@ const submitScore = () => {
         "score": timeLeft
     })
     console.log(myWins)
-    
+    localStorage.setItem("wins", JSON.stringify(myWins));
 }
 
 const setScore = () => {
@@ -126,7 +133,6 @@ const handleAnswer = (event) => {
         // create function to redirect to score page
         stopTimer = true;
         setScore();
-        console.log(timeLeft)
     }
 }
 

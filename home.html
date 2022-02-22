@@ -1,60 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/home.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/home.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav id="navbar">
-        <div>
-            <ul id="nav-list">
-                <li>
-                    <a href="home.html" id="home">home</a>
-                </li>
-                <li>
-                    <a href="leaderboard.html">leaderboard</a>
-                </li>
-                <li id="timer-item" class="hidden">
-                   <a id="timer" value="0"></a>
-                </li>
-            </ul>
-        </div>
+      <div>
+        <ul id="nav-list">
+          <li>
+            <a href="home.html" id="home">home</a>
+          </li>
+          <li>
+            <a href="leaderboard.html">leaderboard</a>
+          </li>
+          <li id="timer-item" class="hidden">
+            <a id="timer" value="0"></a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <div id="start-quiz"> 
-        <div id="start-quiz-section">
-            <div id="start-quiz-container">
-                <div id="quiz-text">
-                    <h2>Start Quiz ✧</h2>
-                    <p>Lets see how much you know about astronomy!</p>
-                    <p>Press the start button to begin the quiz.</p>
-                    <p>Try and answer as quickly as possible!</p>
-                    <p>Wrong answers will subtract time from your score.</p>
-                </div>
-        
-                <div id="quiz-button-section">
-                    <button id="quiz-button">Start</button>
-                </div>
-            </div>
+    <div id="start-quiz">
+      <div id="start-quiz-section">
+        <div id="start-quiz-container">
+          <div id="quiz-text">
+            <h2>Start Quiz ✧</h2>
+            <p>Lets see how much you know about astronomy!</p>
+            <p>Press the start button to begin the quiz.</p>
+            <p>Try and answer as quickly as possible!</p>
+            <p>Wrong answers will subtract time from your score.</p>
+          </div>
+
+          <div id="quiz-button-section">
+            <button id="quiz-button">Start</button>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div id="question-section" class="hidden">
+    <div id="question-div" class="hidden">
+      <div id="question-section">
         <div id="question-container">
-            <h4 id="question"></h4>
-            <div id="answer-buttons">
-                <button class="question-answer"></button>
-                <button class="question-answer"></button>
-                <button class="question-answer"></button>
-                <button class="question-answer"></button>
-            </div>
+          <h4 id="question"></h4>
+          <div id="answer-buttons">
+            <button class="question-answer" value="a"></button>
+            <button class="question-answer" value="b"></button>
+            <button class="question-answer" value="c"></button>
+            <button class="question-answer" value="d"></button>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-<script src="assets/js/home.js"></script>
 
+    <div id="score-display-section" class="hidden">
+      <div id="start-quiz-section">
+        <div id="start-quiz-container">
+          <div>
+            <p id="score-display"></p>
+            <input id="initial-form" type="text" placeholder="Enter your initials">
+          </div>
+          <div id="quiz-button-section">
+            <button id="score-button">Submit Score</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script src="assets/js/home.js"></script>
 </html>
