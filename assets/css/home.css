@@ -25,12 +25,6 @@ body {
     margin-left: 75vw;
 }
 
-.hidden {
-    transition: 2s;
-    height: 0px;
-    display: none;
-}
-
 #start-quiz-section {
     padding-top: 50px;
     width: 100vw;
@@ -75,4 +69,35 @@ body {
 #question-section {
     position: relative;
     padding-top: 50px;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#question-container {
+    background-color: #202327;
+    text-align: center;
+    padding:50px;
+    color: #fff;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 15px;
+}
+
+#question-container div {
+    margin-top: 15%;
+}
+
+#question-container div button {
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.hidden {
+    transition: 2s;
+    height: 0px;
+    display: none;
 }
