@@ -101,3 +101,23 @@ body {
     height: 0px;
     display: none;
 }
+
+.leaderboard {
+    overflow-y: scroll;
+}
+
+#score-container {
+    overflow: scroll;
+    
+}
+
+#score-list {
+    text-decoration: none;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#score-list li {
+    margin: 15px;
+}
