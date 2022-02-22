@@ -7,6 +7,7 @@ const timer = document.getElementById('timer');
 const questionText = document.getElementById('question');
 const answersText = document.getElementById('answer-buttons');
 const answerButtons = document.getElementsByClassName("question-answer");
+var myWins = [];
 var timeLeft = 100;
 var stopTimer = false;
 var increment = 0
@@ -14,41 +15,76 @@ var increment = 0
 //array of questions
 const questions = [
     {
-        question: "hahaha",
+        question: "What causes solar wind?",
         answers: [
-            'a. yes',
-            'b. no',
-            'c. no',
-            'd. no'
+            'a. The sun\'s corona.',
+            'b. Magnetic fields.',
+            'c. Gaseous particles.',
+            'd. The sun\'s core.'
         ],
         correctAnswer: "a"
     },
     {
-        question: "uhoh",
+        question: "How many planets are there in our solar system?",
         answers: [
-            'a. stinky',
-            'b. no',
-            'c. no',
-            'd. no'
+            'a. 6',
+            'b. 7',
+            'c. 9',
+            'd. 8'
         ],
-        correctAnswer: "a"
+        correctAnswer: "d"
     },
+    {
+        question: "What determines a moon\'s atmosphere?",
+        answers: [
+            'a. It\'s current temperature.',
+            'b. The amount of rocky material.',
+            'c. The temperature of the parent planet.',
+            'd. The amount of oxygen.'
+        ],
+        correctAnswer: "c"
+    },
+    {
+        question: "Where do comets come from?",
+        answers: [
+            'a. The astroid belt.',
+            'b. Remnant planets',
+            'c. The Oort Cloud.',
+            'd. Exploding stars.'
+        ],
+        correctAnswer: "c"
+    },
+    {
+        question: "How far is the Kuiper Belt from the sun?",
+        answers: [
+            'a. 30 billion meters.',
+            'b. 30 astronomical units.',
+            'c. 20 million killometers',
+            'd. 20 astronomical units.'
+        ],
+        correctAnswer: "b"
+    },
+    {
+        question: "How many galaxies are there in the universe?",
+        answers: [
+            'a. 50 trillion.',
+            'b. 100 billion.',
+            'c. 2 trillion.',
+            'd. We don\'t really know.'
+        ],
+        correctAnswer: "d"
+    }
 ]
-
-// const checkAnswer = () => {
-
-// }
 
 const handleAnswer = (event) => {
 
     const isButton = event.target.nodeName === 'BUTTON'
-
     if(!isButton) return
     
 
     const answer = event.target.value
 
-    if(questions.length - increment > 0) {
+    if(questions.length - increment > 1) {
         // checkAnswer()
         console.log(answer)
         console.log(questions[increment].correctAnswer)
@@ -62,6 +98,8 @@ const handleAnswer = (event) => {
 
     } else {
         // create function to redirect to score page
+        stopTimer = true;
+        console.log(timeLeft)
     }
 }
 
@@ -90,6 +128,7 @@ const counter = () => {
 
 // function to display quiz and call start counter function
 const startQuiz = () => {
+    stopTimer = false;
     counter();
     timerItem.classList.remove('hidden')
     startSection.classList.add('hidden')
