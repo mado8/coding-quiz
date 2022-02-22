@@ -104,6 +104,9 @@ const submitScore = () => {
     })
     console.log(myWins)
     localStorage.setItem("wins", JSON.stringify(myWins));
+
+    scoreDisplay.classList.add('hidden');
+    startSection.classList.remove('hidden');
 }
 
 const setScore = () => {
