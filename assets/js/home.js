@@ -4,8 +4,12 @@ const startSection = document.getElementById('start-quiz');
 const quizSection = document.getElementById('question-section');
 const timerItem = document.getElementById('timer-item');
 const timer = document.getElementById('timer');
+const questionText = document.getElementById('question');
+const answersText = document.getElementById('answer-buttons');
+const answerButtons = document.getElementsByClassName("question-answer");
 var timeLeft = 100;
 var stopTimer = false;
+var increment = 0
 
 //array of questions
 const questions = [
@@ -31,12 +35,43 @@ const questions = [
     },
 ]
 
+// const checkAnswer = () => {
+
+// }
+
+const handleAnswer = (event) => {
+
+    const isButton = event.target.nodeName === 'BUTTON'
+
+    if(!isButton) return
+    
+
+    const answer = event.target.value
+
+    if(questions.length - increment > 0) {
+        // checkAnswer()
+        console.log(answer)
+        console.log(questions[increment].correctAnswer)
+        console.log(answer !== questions[increment].correctAnswer)
+        if(answer !== questions[increment].correctAnswer) {
+            timeLeft = timeLeft - 20;
+            console.log(timeLeft)
+        } 
+        increment++
+        setQuestions() 
+
+    } else {
+        // create function to redirect to score page
+    }
+}
+
 const setQuestions = () => {
-    for(var i = 0; i < questions.length; i++) {
-        console.log(questions[i])
-        for(var j = 0; j < 4; j++) {
-            console.log(questions[i].answers[j])
-        }
+    questionText.innerHTML = questions[increment].question
+    for(var j = 0; j < 4; j++) {
+        var childNodeIncrement = [1,3,5,7]
+        var questionEl = answersText.childNodes[childNodeIncrement[j]]
+        var questionAnswers = questions[increment].answers[j]
+        questionEl.innerHTML = questionAnswers;
     }
 }
 
@@ -61,5 +96,7 @@ const startQuiz = () => {
     quizSection.classList.remove('hidden')
     setQuestions();
 }
+
+answersText.addEventListener("click", handleAnswer);
 
 button.addEventListener('click', startQuiz);
