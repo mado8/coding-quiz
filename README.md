@@ -8,9 +8,7 @@ A coding quiz using pure javascript to quiz the user on astronomy questions and 
 
 - [ Description ](#Description)</br>
 - [ Webpage ](#Webpage)</br>
-- [ Usage ](#Usage)</br>
 - [ License ](#License )</br>
-- [ Links ](#Links)</br>
 - [ Questions ](#Questions)</br>
 
 ## Webpage
