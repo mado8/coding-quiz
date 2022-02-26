@@ -8,6 +8,7 @@ A coding quiz using pure javascript to quiz the user on astronomy questions and 
 
 - [ Description ](#Description)</br>
 - [ Webpage ](#Webpage)</br>
+- [ Usage ](#Usage)</br>
 - [ License ](#License )</br>
 - [ Questions ](#Questions)</br>
 
@@ -20,6 +21,9 @@ A coding quiz using pure javascript to quiz the user on astronomy questions and 
 <img width="1439" alt="Screen Shot 2022-02-22 at 8 46 33 AM" src="https://user-images.githubusercontent.com/88465484/155857815-dcfe6d49-de34-4c19-96df-ef8394456bbb.png">
 
 <img width="1439" alt="Screen Shot 2022-02-22 at 8 47 02 AM" src="https://user-images.githubusercontent.com/88465484/155857827-9952c74c-07e4-478c-89da-9c806106097b.png">
+
+## Usage
+Run node index.html or open the index file in your browser.
 
 ## License 
 This project is licensed under MIT.  
