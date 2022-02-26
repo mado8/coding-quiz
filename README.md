@@ -26,9 +26,6 @@ A coding quiz using pure javascript to quiz the user on astronomy questions and 
 ## License 
 This project is licensed under MIT.  
 
-## Link
-Link to live url:  https://mado8.github.io/coding-quiz/
-
 ## Questions
 
 Visit my other projects at https://github.com/mado8 </br>
